@@ -21,6 +21,7 @@ public class Visualizer1 extends WaveformGenerator {
 		return Math.log10(length);
 		//return length;
 	}
+	
 	@Override
 	public void paintComponent(Graphics g) {
 		Complex[] t = new Complex[waveform.length];
@@ -57,7 +58,6 @@ public class Visualizer1 extends WaveformGenerator {
 			else
 				barRepresentation[9]++;
 		}
-		
 		g.setColor(Color.BLACK);
 		g.fillRect(0, 0, getWidth(), getHeight());
 		g.setColor(Color.GREEN);
@@ -80,7 +80,7 @@ public class Visualizer1 extends WaveformGenerator {
 				
 			}
 		}
-		//g.setColor(Color.WHITE);
-		//g.drawString("Fast Fourier Transform Algorithim [FREQ BAR GRAPH]", 10, 20);
+		g.setColor(Color.WHITE);
+		g.drawString("Fast Fourier Transform Algorithim [FREQ BAR GRAPH]", 10, 20);
 	}
 }

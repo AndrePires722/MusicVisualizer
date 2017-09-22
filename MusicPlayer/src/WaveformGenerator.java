@@ -66,7 +66,7 @@ public class WaveformGenerator extends JPanel implements ActionListener,Runnable
 				int persecond = (int) Window.player.clip.getFormat().getSampleRate();
 				//int numBytes = (int)(persecond * (5/1000.0) * bytesPerFrame)
 				
-				int numBytes = 2048;
+				int numBytes = 1024;
 				
 				waveform = new byte[numBytes];
 				
@@ -116,8 +116,8 @@ public class WaveformGenerator extends JPanel implements ActionListener,Runnable
 					(int) (waveform[i]*getHeight()/256.0) + getHeight() / 2);
 		}
 		
-		//g.setColor(Color.WHITE);
-		//g.drawString("Waveform", 10, 20);
+		g.setColor(Color.WHITE);
+		g.drawString("Waveform", 10, 20);
 	}
 
 	@Override

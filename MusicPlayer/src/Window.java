@@ -61,6 +61,7 @@ public class Window {
 		w.add(new WaveformGenerator());
 		// w.pack();
 		w.add(new Visualizer1());
+		w.add(new Visualizer2());
 		w.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		w.setUndecorated(true);
 		w.setVisible(true);
