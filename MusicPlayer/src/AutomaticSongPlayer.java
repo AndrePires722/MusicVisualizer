@@ -33,8 +33,9 @@ public class AutomaticSongPlayer implements Runnable {
 					Window.player.play();
 				}
 				
-			}else{
-				//System.out.println("They dont want me to play music automatically!");
+			}
+			if(Window.player.streaming) {
+				
 			}
 			
 			try {

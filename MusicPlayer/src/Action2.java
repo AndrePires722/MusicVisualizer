@@ -17,5 +17,6 @@ class Action2 implements ActionListener {
 		Window.player.stop();
 		else System.out.println("No active song to stop");
 		Window.autoPlay = false;
+		Window.player.streaming = false;
 	}
 }

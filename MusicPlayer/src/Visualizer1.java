@@ -28,6 +28,7 @@ public class Visualizer1 extends WaveformGenerator {
 		for (int i = 0; i < t.length; i++) {
 			t[i] = new Complex(waveform[i], 0);
 		}
+
 		t = Complex.fft(t);
 		double[] squared = new double[t.length / 2];
 		// 10 octaves - 0 to 65.7*2^10

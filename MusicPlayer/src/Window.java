@@ -22,8 +22,17 @@ public class Window {
 	public static String[] listData;
 	public static boolean shuffled;
 	public static boolean autoPlay;
+	public static Visualizer2 v2;
+	public static GPIOout LED;
 
 	public static void main(String[] args) throws LineUnavailableException {
+		/*try {
+			LED = new GPIOout();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		LED.test();*/
 		player = new MusicPlayer("");
 		System.out.println("yo");
 		shuffled = false;
@@ -32,9 +41,9 @@ public class Window {
 		w.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		w.setResizable(true);
 		w.setLayout(new GridLayout(0, 1));
-		w.setSize(1000, 600);
+		//w.setSize(1000, 600);
 		JPanel panel = new JPanel();
-
+		
 		JButton button = new JButton("Play");
 		panel.add(button);
 		button.addActionListener(new Action1());
@@ -44,28 +53,31 @@ public class Window {
 		JButton button3 = new JButton("Shuffle");
 		panel.add(button3);
 		button3.addActionListener(new Action3());
-
+		
 		label1 = new JLabel("Welcome");
 		panel.add(label1);
-
+		
 		// Create a new listbox control
 		list = new JList(listData);
 		panel.add(list);
-
+		
 		if (true)
 			w.add(panel);
 		else
 			button3.doClick();
-
+		
 		(new Thread(new AutomaticSongPlayer())).start();
 		w.add(new WaveformGenerator());
 		// w.pack();
 		w.add(new Visualizer1());
-		w.add(new Visualizer2());
-		w.setExtendedState(JFrame.MAXIMIZED_BOTH);
-		w.setUndecorated(true);
+		v2 = new Visualizer2();
+		w.add(v2);
+		//w.setExtendedState(JFrame.MAXIMIZED_BOTH);
+		
+		//w.setUndecorated(true);
+		w.setSize(600, 600);
 		w.setVisible(true);
-
+		
 	}
 
 }

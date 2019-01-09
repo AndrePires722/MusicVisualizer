@@ -3,7 +3,7 @@ import java.io.File;
 import java.util.ArrayList;
 
 public class FileIndexer {
-	String musicDir = System.getProperty("user.dir")+"\\";
+	String musicDir = System.getProperty("user.dir")+"/";
 	public static ArrayList<String> fileNames;
 	int length;
 	int ID=0;
@@ -18,12 +18,12 @@ public class FileIndexer {
 	              System.getProperty("user.dir"));
 		File[] listOfFiles = folder.listFiles();
 		length = new File(musicDir).list().length;
-		Window.listData = new String[length];
-		
+		Window.listData = new String[length+1];
+		Window.listData[0] = "~Test:#j9034h9wg";
 		for (int i = 0; i < listOfFiles.length; i++) {
 		      if (listOfFiles[i].isFile()) {
 		        fileNames.add(musicDir+listOfFiles[i].getName());
-		        Window.listData[i] = listOfFiles[i].getName();
+		        Window.listData[i+1] = listOfFiles[i].getName();
 		      } 
 		    }
 		
@@ -33,7 +33,7 @@ public class FileIndexer {
 	}
 	public String getFile(String str){
 		for(String x : fileNames){
-			if(x.contains(str)){
+			if(x.toLowerCase().contains(str.toLowerCase())){
 				return x;
 			}
 		}
